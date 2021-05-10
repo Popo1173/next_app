@@ -18,11 +18,11 @@ npm install --save next react react-dom
 ```
 
 # 構成
-PJ 
-└node_modules 
-└pages 
-└package.json 
-└next.confing.js 
+PJ  
+└node_modules  
+└pages  
+└package.json  
+└next.confing.js  
 
 # index.js 作成
 別ファイルになどに記述しているスクリプトを外部で利用したいものを設定<br>
