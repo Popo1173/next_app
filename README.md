@@ -55,10 +55,42 @@ module.exports =  {
 //ビルドする
 npm run build
 
-//エクスポートする
+//エクスポートする　静的ファイルを書き出す
 npm run export
 ```
 
+# 静的ファイルは動かない
+静的ファイルに変換するのはダイナミックな操作をする処理をしないもので利用する。
 
+# スタイル適用
+## スタイル直書きスタイルを変数にいれる
+```
+const h1 = {
+    fontSize: '72pt',
+    fontWeight: 'bold',
+    textAlign: 'right',
+    letterSpacing: '-8px',
+    color: '#f0f0f0',
+    margin: '-40px 0px'
+}
+
+const p = {
+    margin: '0px',
+    color: '#666',
+    fontSize: '16pt'
+}
+
+export default()=><div>
+    <h1 style={h1}>Next.js</h1>
+    <p style={p}>Welcome to next.js!</p>
+</div>
+```
+
+## ビルドインCSS
+JSXに埋め込むスタイルシート情報
+```
+<style jsx> {'
+...スタイル記述...
+'}
 
 
