@@ -3,6 +3,7 @@ import Link from 'next/link';
 import style from '../static/Style';
 
 export default () => <div>
+    {/* JSXで出力 */}
     {style}
     <h1>Next.js</h1>
     <p>Welcome to next.js!</p>
