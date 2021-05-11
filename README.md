@@ -122,3 +122,12 @@ export default()=><div>
 
 # 複数ファイルを作成する
 REACTと違いNEXTJSは複数ページが作成できる  
+
+## Linkコンポーネント
+<Link>タグは<a>タグと同じようにリンクを作成する  
+<a>タグには「href=""」が用意されておらず、<Link>の方で用意されている。
+```
+<Link href="/">
+    <a>Back to Index Page </a>
+</Link>
+```
