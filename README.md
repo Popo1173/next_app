@@ -162,8 +162,9 @@ REACTと違いNEXTJSは複数ページが作成できる
 
 # Componentを利用する
 componentsディレクトリを作成する  
-いつも通り作成したコンポーントで
-````import React, { Component } from 'react';```
+いつも通り作成したコンポーントで```import React, { Component } from 'react';```  
+親で```import コンポーネント名 from '../パス/コンポーネント名';``` して、```<コンポーネント名 />```する
+
 
 
 
