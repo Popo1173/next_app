@@ -26,7 +26,7 @@ PJ
 　└index.js  
 　└other.js  
 └static  
- └Style.js  
+　└Style.js  
 └package.json  
 └next.confing.js  
 
