@@ -20,10 +20,14 @@ npm install --save next react react-dom
 # 構成
 PJ  
 └node_modules  
-└pages  
+└pages 
+ └index.js  
+  └other.js  
+└static  
+ └Style.js  
 └package.json  
 └next.confing.js  
-└index.js  
+
 
 # index.js 作成
 別ファイルになどに記述しているスクリプトを外部で利用したいものを設定<br>
@@ -120,14 +124,20 @@ export default()=><div>
     <p>Welcome to next.js!</p>
 ```
 
+## 外部スタイルシート
+ページのように「スタイルのスクリプトファイル」を用意し、それを読み込んで利用する。  
+
+
+
 # 複数ファイルを作成する
 REACTと違いNEXTJSは複数ページが作成できる  
 
 ## Linkコンポーネント
 ```<Link>```タグは```<a>```タグと同じようにリンクを作成する  
-```<a>```タグには「href=""」が用意されておらず、```<Link>```の方で用意されている。
+```<a>```タグには「href=""」が用意されておらず、```<Link>```の方で用意されている。  
+よって```<a>```タグは不要となる
 ```
 <Link href="/">
-    <a>Back to Index Page </a>
+    Back to Index Page 
 </Link>
 ```
