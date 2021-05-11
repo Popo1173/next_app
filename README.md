@@ -51,3 +51,14 @@ module.exports =  {
 }
 ```
 
+```
+//ビルドする
+npm run build
+
+//エクスポートする
+npm run export
+```
+
+
+
+
