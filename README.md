@@ -23,6 +23,7 @@ PJ
 └pages  
 └package.json  
 └next.confing.js  
+└index.js  
 
 # index.js 作成
 別ファイルになどに記述しているスクリプトを外部で利用したいものを設定<br>
@@ -37,4 +38,16 @@ JSXを使ってページを表示するため、HTMLファイルは利用しな�
 
 # エクスポート
 作成したファイルを静的ファイルとして保存する。<br>
-next.config.js
+next.config.jsを作成  
+Next.jsの設定情報を記述するファイル  
+```
+module.exports =  {
+    //exportPathMapという項目を持ったオブジェクトをエクスポート
+    //出力するページのマッピングを行う
+    exportPathMap: function(){
+    　　　//pages内のindex.jsがトップになるよう設定
+        '/'; {page: '/'}
+    }
+}
+```
+
