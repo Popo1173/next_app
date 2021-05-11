@@ -20,7 +20,7 @@ npm install --save next react react-dom
 # 構成
 PJ  
 └node_modules  
-└components 
+└components 　
 　└Counter.js 
 └pages 
 　└index.js  
