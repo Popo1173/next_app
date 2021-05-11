@@ -87,10 +87,34 @@ export default()=><div>
 ```
 
 ## ビルドインCSS
-JSXに埋め込むスタイルシート情報
+JSXに埋め込むスタイルシート情報  
+普段のスタイルの書き方
 ```
 <style jsx> {`
 ...スタイル記述...
 `}
+```
+```
+export default()=><div>
+    <style jsx>
+        {`
+        h1 {
+            font-size: 68pt;
+            font-weight: bold;
+            text-align: right;
+            letter-spacing: -8px;
+            color: #f0f0f0;
+            margin: -32px 0px;
+        }
+        p {
+            margin: 0px;
+            color: #666;
+            font-size: 16pt;
+        }
+        `}
+    </style>
+    <h1>Next.js</h1>
+    <p>Welcome to next.js!</p>
+```
 
 
