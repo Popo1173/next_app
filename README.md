@@ -120,4 +120,5 @@ export default()=><div>
     <p>Welcome to next.js!</p>
 ```
 
-
+# 複数ファイルを作成する
+REACTと違いNEXTJSは複数ページが作成できる  
