@@ -89,8 +89,8 @@ export default()=><div>
 ## ビルドインCSS
 JSXに埋め込むスタイルシート情報
 ```
-<style jsx> {'
+<style jsx> {`
 ...スタイル記述...
-'}
+`}
 
 
