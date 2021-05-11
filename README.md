@@ -21,10 +21,10 @@ npm install --save next react react-dom
 PJ  
 └node_modules  
 └components 
- └Counter.js 
+　└Counter.js 
 └pages 
- └index.js  
-  └other.js  
+　└index.js  
+　└other.js  
 └static  
  └Style.js  
 └package.json  
