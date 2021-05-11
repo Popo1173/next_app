@@ -126,7 +126,23 @@ export default()=><div>
 
 ## 外部スタイルシート
 ページのように「スタイルのスクリプトファイル」を用意し、それを読み込んで利用する。  
-
+Style.jsファイルを作成し、ページJSにインポートする
+```
+[Style.js]
+書き方は普通のスタイル
+export default <style>
+    {`
+        h1 {
+            margin: 10px;
+            font-size: 10px
+        }
+    
+    `}
+[index.js]
+import style from '../hoge/Style'
+export defalut ()=> <div>
+ {style}
+```
 
 
 # 複数ファイルを作成する
