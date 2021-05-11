@@ -20,6 +20,8 @@ npm install --save next react react-dom
 # 構成
 PJ  
 └node_modules  
+└components 
+ └Counter.js 
 └pages 
  └index.js  
   └other.js  
@@ -141,9 +143,9 @@ export default <style>
 [index.js]
 import style from '../hoge/Style'
 export defalut ()=> <div>
- {style}
+ {style} → JSX内で出力
+ <h1>...</h1>
 ```
-
 
 # 複数ファイルを作成する
 REACTと違いNEXTJSは複数ページが作成できる  
@@ -157,3 +159,11 @@ REACTと違いNEXTJSは複数ページが作成できる
     Back to Index Page 
 </Link>
 ```
+
+# Componentを利用する
+componentsディレクトリを作成する  
+いつも通り作成したコンポーントで
+````import React, { Component } from 'react';```
+
+
+
