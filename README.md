@@ -188,12 +188,18 @@ Layoutコンポーネントでラップすることで、全てのページはLa
 ```
 
 # Headコンポーネント
+参考:[https://t-cr.jp/memo/2201639257480a359]
 ヘッダー情報用のHead  
 ```<head>タグ```に相当するもの
 ```
 //LayoutコンポーネントにHeadコンポーネントをインポート
 import Head from 'next/head';
 <Head>
-...ヘッダー情報...
+    <title>{this.props.title}</title>
+    <meta property="description" content={this.props.description} />
+    <meta name="keywords" content={this.props.keyword} />
+    <link rel="canonical" href={'https://xxxxxx'} />
 </Head>
+//親コンポーネント
+ <Layout header="Next" title="TopPage"　description="ディスクリプション" keyword="キーワード">>
 ```
