@@ -191,6 +191,9 @@ Layoutコンポーネントでラップすることで、全てのページはLa
 ヘッダー情報用のHead  
 ```<head>タグ```に相当するもの
 ```
+//LayoutコンポーネントにHeadコンポーネントをインポート
+import Head from 'next/head';
 <Head>
 ...ヘッダー情報...
 </Head>
+```
