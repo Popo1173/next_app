@@ -27,6 +27,8 @@ PJ
 　└other.js  
 └static  
 　└Style.js  
+　└Image.js  
+  └Image.jpg
 └package.json  
 └next.confing.js  
 
@@ -203,3 +205,18 @@ import Head from 'next/head';
 //親コンポーネント
  <Layout header="Next" title="TopPage"　description="ディスクリプション" keyword="キーワード">>
 ```
+
+# image コンポーネント
+イメージコンポーネントを作成する(Image.js)  
+あらかじめファイルを利用するコンポーネントを作成しておく  
+```
+//コンポーンと読み込み
+import Image from '../static/Image';
+//コンポーネント設定
+<Image fname="ファイル名" size="250" />
+
+
+
+```
+
+
