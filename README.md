@@ -214,9 +214,32 @@ import Head from 'next/head';
 import Image from '../static/Image';
 //コンポーネント設定
 <Image fname="ファイル名" size="250" />
-
-
-
 ```
+# Reduxを使う
+## 必要なモジュールインストール
+Redux
+```
+npm install --save redux
+```
+
+ReactRedux
+```
+npm install --save react redux
+```
+
+ReduxThunk
+```
+npm install --save redux-thunk
+```
+
+## AppWithReduxコンポーネント作成
+最初に作るのは、AppWithReduxコンポーネントとそれいに付随する値や関数。 
+AppWithRedux
+next_app  
+└lib  
+　└redux-store.js  
+ 
+ 
+
 
 
