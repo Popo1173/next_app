@@ -232,6 +232,10 @@ ReduxThunk
 npm install --save redux-thunk
 ```
 
+Reduxを利用する時は、以下のファイルを用意しておけば、とりあえずOK
+redux-store.js、_App.js  
+インポートするパスも合わせよう
+
 ## AppWithReduxコンポーネント作成
 最初に作るのは、AppWithReduxコンポーネントとそれいに付随する値や関数。  
 - AppWithReduxコンポーネントでReduxを初期化し、reduxStore属性にreduxStoreという値を指定してAPPコンポーネントを作成
