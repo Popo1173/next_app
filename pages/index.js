@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import Image from '../static/Image';
+import Counter from '../components/Counter'
 
 export default () => (
     <Layout 
@@ -8,7 +9,7 @@ export default () => (
         title="TopPage"　
         description="ディスクリプション" 
         keyword="キーワード"　url={'htttp://xxxxxxxx'}>
-    <p>Welcome to next.js!</p>
+        <Counter />
     <Image fname="image.jpg" size="250" />
     <hr />
         <Link href="./other">

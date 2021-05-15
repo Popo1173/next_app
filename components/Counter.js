@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Counter extends Component {
-    msgStyle = {
-        fontSize: "16pt",
-        backgroundColor: "#eef",
-        padding: "5px"
+class Counter extends Component {
+    style = {
+        fontSize: "12pt",
+        padding: "5px 15px"
     }
 
     constructor(props){
         super(props);
-        //Stateの初期値
-        this.state = {
-            counter: 0,
-            msg: 'counterInit: 0'
-        };
-        //thisでdoActuion関数を影響しないためbindする
         this.doAction = this.doAction.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
-    doAction(){
-        //doAction発火したらsetStateで更新
-        this.setState((state)=>{
-            const num = state.counter + 1;
-            return({
-                counter: num,
-                msg: "count: " + num
-            });
-        });
+    doAction(e) {
+        if(e.shiftKey){
+            return this.props.dispatch({type: 'DECREMENT'});
+        }else {
+            return this.props.dispatch({type: 'INCREMENT'});
+        }
+    }
+
+    reset(e) {
+        return this.props.dispatch({type: 'RESET'});
     }
 
     render(){
-        return (
-            <p onClick={this.doAction} style={this.msgStyle}>
-                {this.state.msg}
-            </p>)
+        return(
+            <div>
+                <p>{this.props.message}: {this.props.count}</p>
+                <button style={this.style} onClick={this.doAction}>Count</button>
+                <button style={this.style} onClick={this.reset}>Reset</button>
+            </div>
+        )
     }
 }
+
+//connectでCounterコンポーネントをコネクトしエクスポート
+//(state)=>state)で、state全てを渡す
+//戻り値をexport defaultすることで、ディスパッチと値が全て利用できる。
+Counter = connect((state)=>state)(Counter);
+export default Counter;
