@@ -317,7 +317,15 @@ class _App extends Component {
 }
 export default withReduxStore(_App)
 ```
-# _App
+## applyMiddleware
+ミドルウェアを組み込む働きをするもの  
+ここでは「thunkMiddleweare」というミドルウェアを組み込んでいる  
+[ミドルウェアとは]  
+REACTの処理の途中に入り込んで、実行する処理内容をカスタマイズする働きをする。  
+この組み込みを忘れるとNEXTでReduxが利用できないので注意
+
+
+
 
 ## _App.js
 NextのAp
