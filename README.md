@@ -233,11 +233,90 @@ npm install --save redux-thunk
 ```
 
 ## AppWithReduxコンポーネント作成
-最初に作るのは、AppWithReduxコンポーネントとそれいに付随する値や関数。 
-AppWithRedux
+最初に作るのは、AppWithReduxコンポーネントとそれいに付随する値や関数。  
+- AppWithReduxコンポーネントでReduxを初期化し、reduxStore属性にreduxStoreという値を指定してAPPコンポーネントを作成
+- getOrCreateStore関数でストアを作成する
 next_app  
 └lib  
 　└redux-store.js  
+ ```
+ import { Component } from 'react';
+import { initStore } from '../store';
+
+const isServer = typeof window === 'undefined'
+const _NRS_ = '__NEXT_REDUX__STORE__'
+
+//Storeを作成する
+function getOrCreateStore (initialState) {
+    if(isServer) {
+        return initStore(initialState)
+    }
+
+    if(!window[__NRS__]) {
+        window[__NRS__] = initStore(initialState)
+    }
+    return window[__NRS__]
+}
+
+export default (App) => {
+    
+    return class AppWithRedux extends Component {
+        static async getInitialProps (appContex) {
+            const reduxStore =  getOrCreateStore()
+            appContex.ctx.reduxStore = reduxStore
+            let appProps = {}
+            if(typeof App.getInitialProps === 'function') {
+                appProps = await App.getInitialProps(appContex)
+            }
+            return {
+                ...appProps,
+                initialReduxState: reduxStore.getState()
+            }
+        }
+        constructor(props){
+            super(props)
+            this.reduxStore = getOrCreateStore(props.initialReduxState)
+        }
+
+        render(){
+            return (<App {...this.props}
+                reduxStore={this.reduxStore} />
+            )
+        }
+    }
+}
+```
+
+## _App.js
+NEXTのAPPコンポーネントを継承して、カスタマイズしたAPPコンポーネントを作成するもの。  
+この通り記述しておけばOK動く。
+next_app  
+└pages  
+　└_App.js  
+```
+import App, { Container } from 'next/app';
+import React, { Component } from 'react';
+import withReduxStore from '../lib/redux-store';
+import { Provider } from 'redux-store';
+
+class _App extends Component {
+    render(){
+        const {Component, pageProps, reduxStore } = this.props
+        return(
+            <Container>
+                <Provider store={reduxStore}>
+                    <Component {...pageProps} />
+                </Provider>
+            </Container>
+        )
+    }
+}
+export default withReduxStore(_App)
+```
+# _App
+
+## _App.js
+NextのAp
  
  
 
