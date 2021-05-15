@@ -16,6 +16,7 @@ class Counter extends Component {
     doAction(e) {
         if(e.shiftKey){
             return this.props.dispatch({type: 'DECREMENT'});
+
         }else {
             return this.props.dispatch({type: 'INCREMENT'});
         }

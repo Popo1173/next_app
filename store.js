@@ -1,4 +1,4 @@
-import { creatStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleweare from 'redux-thunk';
 
 //ステートの初期化
@@ -19,7 +19,7 @@ function counterReducer (state = initial, action) {
         case 'DECREMENT':
             return{
                 message: 'DECREMENT',
-                count: state.count -1
+                count: state.count - 1
             };
         case 'RESET':
             return{
@@ -34,6 +34,6 @@ function counterReducer (state = initial, action) {
 //initStore関数（redux-store.jsで必要）
 //redux-store.js のstore.jsにあるinitStoreを呼び出しているので記載
 //createSoreを関数の形にしてエクスポートしているだけ
-export function initStore(store = initial) {
+export function initStore(state = initial) {
     return createStore(counterReducer, state, applyMiddleware(thunkMiddleweare))
 }

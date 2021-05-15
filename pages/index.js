@@ -4,6 +4,7 @@ import Image from '../static/Image';
 import Counter from '../components/Counter'
 
 export default () => (
+    <div>
     <Layout 
         header="Next" 
         title="TopPage"　
@@ -16,4 +17,5 @@ export default () => (
             <button>Go to Other Page &gt;&gt;</button>
         </Link>
     </Layout>
+    </div>
 )
