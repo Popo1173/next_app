@@ -33,11 +33,15 @@ PJ
 └next.confing.js  
 
 
-# index.js 作成
+# まずはindex.js 作成
 別ファイルになどに記述しているスクリプトを外部で利用したいものを設定<br>
 （）=> 関数を外部で利用するもの<br>
 ```
-export defult ()=><div></div>
+export default () => (
+    <div>
+        <p>ssss</p>
+    </div>
+)
 ```
 
 # 「pages」フォルダでページを用意する
